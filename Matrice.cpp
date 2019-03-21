@@ -1,6 +1,7 @@
 
 
 #include <iostream>
+#include <fstream>
 #include "Matrice.h"
 using namespace std;
 
@@ -264,13 +265,13 @@ void Matrice::adjuncta(Complex **mat, Complex **adj, int n) {
     }
 }
 
-void Matrice::inversa() {
+Matrice Matrice::inversa() {
 
     Complex det = this->determinant();
     if(det.im == 0 && det.re == 0)
     {
         cout << "Nu se poate calcula inversa";
-        return;
+        return Matrice(0, 0);
     }
 
     Complex **mat = new Complex *[this->linii];
@@ -304,12 +305,22 @@ void Matrice::inversa() {
         }
     }
 
+    Matrice inv(this->linii, this->linii);
+
     for (int i = 0; i < this->linii; ++i) {
         for (int j = 0; j < this->linii; ++j) {
-            cout << inversa[i][j] << " ";
+                inv.adauga(inversa[i][j], i + 1, j + 1);
         }
-        cout << "\n";
     }
+
+    return inv;
+//
+//    for (int i = 0; i < this->linii; ++i) {
+//        for (int j = 0; j < this->linii; ++j) {
+//            f << inversa[i][j] << " ";
+//        }
+//        f << "\n";
+//    }
 }
 
 ostream &operator<<(ostream &os, const Matrice &matrice) {

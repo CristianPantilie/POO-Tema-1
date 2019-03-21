@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Mirela/Desktop/POO/Tema1/Complex.h
+ostream
+-
+
+C:/Users/Mirela/Desktop/POO/Tema1/Matrice.h
+ostream
+-
+Complex.h
+C:/Users/Mirela/Desktop/POO/Tema1/Complex.h
+
+C:/Users/Mirela/Desktop/POO/Tema1/main.cpp
+iostream
+-
+fstream
+-
+Complex.h
+C:/Users/Mirela/Desktop/POO/Tema1/Complex.h
+Matrice.h
+C:/Users/Mirela/Desktop/POO/Tema1/Matrice.h
+

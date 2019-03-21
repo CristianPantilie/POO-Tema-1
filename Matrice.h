@@ -41,7 +41,7 @@ public:
     friend std::istream &operator>>(std::istream &is, Matrice &matrice);
 
     Complex determinant();
-    void inversa();
+    Matrice inversa();
 
 
 };
